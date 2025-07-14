@@ -2,7 +2,7 @@
 const { Schema, model } = require("mongoose");
 
 //defino el objeto ()o modelo de la colleción
-const Via15Schema = Schema({
+const ViaSchema = Schema({
   name: {
     type: String,
     required: true,
@@ -28,6 +28,10 @@ const Via15Schema = Schema({
   },
   quepared: {
     type: Number,
+    required: true,
+  },
+  queRoco: {
+    type: String,
     required: true,
   },
   isbloque: {
@@ -56,6 +60,10 @@ const Via15Schema = Schema({
     type: [String],
     default: [],
   },
+  creator_uid:{
+    type: String,
+    default:'',
+  }
 });
 
-module.exports = model("Bloques_Vias", Via15Schema, "Bloques_Vias");
+module.exports = model("Bloques_Vias", ViaSchema, "Bloques_Vias");

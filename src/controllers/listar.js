@@ -2,7 +2,7 @@ const Bloques_vias = require("../models/Bloques_vias");
 const ndificultad = require("./convertir_dificultad");
 
 const consulta = async (req, res) => {
-  const { isbloque, quepared } = req.query;
+  const { isbloque, quepared ,queroco} = req.query;
   const dificultad = ndificultad[req.query.dificultad];
 
   try {
@@ -14,6 +14,7 @@ const consulta = async (req, res) => {
         dificultad: dificultad[0],
         isbloque,
         quepared,
+        queroco
       };
       console.log(query1);
 
@@ -21,6 +22,7 @@ const consulta = async (req, res) => {
         dificultad: dificultad[1],
         isbloque,
         quepared,
+        queroco
       };
       console.log(query2);
 
@@ -45,6 +47,7 @@ const consulta = async (req, res) => {
         dificultad,
         isbloque,
         quepared,
+        queroco
       };
       console.log(query);
 

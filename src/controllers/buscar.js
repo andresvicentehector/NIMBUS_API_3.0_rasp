@@ -9,6 +9,7 @@ const consulta = async (req, res) => {
       $or: [
         { autor: { $regex: buscar, $options: "i" } },
         { name: { $regex: buscar, $options: "i" } },
+        { created_by:{  $regex: buscar, $options: "i"} }
       ],
       quepared: quepared,
     }).exec((error, bloques) => {

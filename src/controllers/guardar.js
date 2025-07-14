@@ -1,8 +1,6 @@
 const validator = require("validator");
 const Bloques_Vias = require("../models/Bloques_vias");
-const Users = require("../models/user");
 const moment = require("moment");
-const { findByIdAndUpdate } = require("../models/user");
 
 const crear = async (req, res) => {
   try {
@@ -31,13 +29,12 @@ const crear = async (req, res) => {
       parametros.created_routes = created_routes;
       parametros.created_routes.push(articuloGuardado.id);
 
-      const useractualizado = await Users.findByIdAndUpdate(userId, parametros);
 
       //Devolver resultado
       return res.status(200).json({
         itinerario: articuloGuardado,
         mensaje: "Itinerario creado con exito",
-        useractualizado,
+       
       });
     };
 

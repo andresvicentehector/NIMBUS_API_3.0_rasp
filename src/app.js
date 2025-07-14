@@ -10,13 +10,7 @@ const routes_borrar = require("./routes/borrar");
 const routes_editar = require("./routes/editar");
 const routes_buscar = require("./routes/buscar");
 const routes_rate = require("./routes/rate");
-//users
-const user_user = require("./routes/user");
-const user_getAllUser = require("./routes/getAllUsers");
-const user_getUser = require("./routes/getUser");
-const user_editUser = require("./routes/editUser");
-const user_delete = require("./routes/deleteUser");
-const user_find = require("./routes/userFind");
+
 
 //Crear servidor Node
 const app = express();
@@ -34,14 +28,6 @@ app.use("/", routes_borrar);
 app.use("/", routes_editar);
 app.use("/", routes_buscar);
 app.use("/", routes_rate);
-
-//rutas relacionadas con los usuarios
-app.use("/", user_getUser);
-app.use("/", user_getAllUser);
-app.use("/", user_user);
-app.use("/", user_editUser);
-app.use("/", user_delete);
-app.use("/", user_find);
 
 //rutas documentacion
 app.use("/documentacion", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
